@@ -30,7 +30,7 @@ printf %s "server {
     }
     add_header X-Served-By $HOSTNAME;
     location /hbnb_static {
-        alias /data/web_static/current;
+        alias /data/web_static/current/;
     }
 }" > /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
