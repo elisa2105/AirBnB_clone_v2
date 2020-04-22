@@ -24,22 +24,6 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             lista = []
-            """y_dict = models.storage.all(City)"""
-            """return [value for key, value in city_dict.items()"""
-            """ if value.state_id == self.id]"""
-            """ for city in city_dict.values():"""
-            """if city.state_id == self.id:"""
-            """lista.append(city)"""
-            """return lista"""
-            """ for i, j in models.storage.all().items():
-                if j.__class__.__name__ == 'City':
-                    if j.state_id == self.id:
-                        lista.append(j)
-            return lista"""
-            for value in models.storage.all().values():
-                try:
-                    if value.state_id == self.id:
-                        lista.append(value)
-                except BaseException:
-                    pass
-            return lista
+            dictu = models.storage.all(City)
+            return [value for key, value in dictu.items()
+                    if value.state_id == self.id]
