@@ -36,4 +36,3 @@ class State(BaseModel, Base):
                     if j.state_id == self.id:
                         lista.append(j)
             return lista
-
