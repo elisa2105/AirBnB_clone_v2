@@ -31,8 +31,15 @@ class State(BaseModel, Base):
             """if city.state_id == self.id:"""
             """lista.append(city)"""
             """return lista"""
-            for i, j in models.storage.all().items():
+            """ for i, j in models.storage.all().items():
                 if j.__class__.__name__ == 'City':
                     if j.state_id == self.id:
                         lista.append(j)
+            return lista"""
+            for value in models.storage.all().values():
+                try:
+                    if value.state_id == self.id:
+                        lista.append(value)
+                except BaseException:
+                    pass
             return lista
